@@ -4,7 +4,24 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  #step 1: initialize, inverse_m: it means inverse matrix 
+  inverse_m <- NULL
+  #step 2: create object 'methods'
+  #
+  set <- function(y) {
+    x <<- y
+    inverse_m <<- NULL
+  }
+  #get: catch input x
+  get <- function() x
+  #setinverse: set "sol" to inverse_m
+  setinverse <- function(sol) inverse_m <<- sol
+  #getinverse: return inverse_m
+  getinverse <- function() inverse_m
+  #list of internal functions(methods)
+  list(set = set, get = get,
+       setinverse = setinverse,
+       getinverse = getinverse)
 }
 
 
